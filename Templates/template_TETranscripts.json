@@ -1,0 +1,22 @@
+{
+   "bin":{
+      "CUTADAPTVER":"cutadapt/1.18",
+      "TRIMGALOREVER":"trimgalore/0.6.5",
+      "STARVER":"STAR/2.7.6a",
+      "SAMTOOLSVER":"samtools/1.13",
+      "FASTQCVER":"fastqc/0.11.9",
+      "MULTIQCVER":"multiqc/1.9",
+      "QUALIMAPVER":"qualimap/2.2.1",
+      "PYTHONVER":"python/3.9",
+      "RSEQCVER":"rseqc/4.0.0",
+      "SCRIPTSDIR":"/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/Scripts",
+      "TETOOLKITVER":"tetoolkit/2.1.4"
+   },
+   "references":{
+      "STARINDEX":"/fdb/STAR_indices/2.7.6a/UCSC/mm10/ref",
+      "FASTAWITHADAPTERSETD":"/data/CCBR_Pipeliner/db/PipeDB/dev/TruSeq_and_nextera_adapters.consolidated.fa",
+      "GENESGTF":"/fdb/STAR_indices/2.7.6a/GENCODE/Gencode_mouse/release_M25/genes.gtf",
+      "GENESBED":"/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/annotations/gencode.vM25.primary_assembly.annotation.bed12",
+      "TEGTF":"/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/annotations/mm10_rmsk_TE.gtf"
+   }
+}

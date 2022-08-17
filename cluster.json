@@ -1,0 +1,48 @@
+{
+    "__default__": {
+        "mem": "48g",
+        "time": "96:00:00",
+        "partition": "norm",
+        "threads": "4",
+        "gres": "lscratch:256"
+    },
+    "trim": {
+        "mem": "32g",
+        "time": "24:00:00",
+        "threads": "16",
+        "partition": "ccr",
+        "gres": "lscratch:100"
+    },
+    "fastqc": {
+        "mem": "12g",
+        "time": "24:00:00",
+        "threads": "12",
+        "partition": "ccr"
+    },
+    "multiqc": {
+        "mem": "12g",
+        "time": "2:00:00",
+        "partition": "ccr"
+    },
+    "align": {
+        "mem": "32g",
+        "time": "24:00:00",
+        "threads": "16",
+        "partition": "ccr"
+    },
+    "infer_experiment": {
+        "mem": "12g",
+        "time": "4:00:00",
+        "partition": "ccr"
+    },
+    "qualimap":{
+        "mem": "12g",
+        "time": "4:00:00",
+        "partition": "ccr"
+    },
+    "te_count":{
+       "mem": "32g",
+        "time": "24:00:00",
+        "partition": "ccr"
+    }
+}

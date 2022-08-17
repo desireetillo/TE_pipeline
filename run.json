@@ -1,0 +1,39 @@
+{
+    "bin": {
+        "CUTADAPTVER": "cutadapt/1.18", 
+        "FASTQCVER": "fastqc/0.11.9", 
+        "MULTIQCVER": "multiqc/1.9", 
+        "PYTHONVER": "python/3.9", 
+        "QUALIMAPVER": "qualimap/2.2.1", 
+        "RSEQCVER": "rseqc/4.0.0", 
+        "SAMTOOLSVER": "samtools/1.13", 
+        "SCRIPTSDIR": "/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/Scripts", 
+        "STARVER": "STAR/2.7.6a", 
+        "TETOOLKITVER": "tetoolkit/2.1.4", 
+        "TRIMGALOREVER": "trimgalore/0.6.5"
+    }, 
+    "project": {
+        "annotation": "mm10", 
+        "cluster": "cluster.json", 
+        "experiment_name": "test", 
+        "gsize": "mm", 
+        "pfamily": "generic", 
+        "sample_vector": [
+            1, 
+            1
+        ], 
+        "samples": [
+            "sample1", 
+            "sample2"
+        ], 
+        "username": "desiree.tillo@nih.gov", 
+        "workpath": "/gpfs/gsfs10/users/GAU/projects/Next0228/DUXBL_RNASeq/pipeline"
+    }, 
+    "references": {
+        "FASTAWITHADAPTERSETD": "/data/CCBR_Pipeliner/db/PipeDB/dev/TruSeq_and_nextera_adapters.consolidated.fa", 
+        "GENESBED": "/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/annotations/gencode.vM25.primary_assembly.annotation.bed12", 
+        "GENESGTF": "/fdb/STAR_indices/2.7.6a/GENCODE/Gencode_mouse/release_M25/genes.gtf", 
+        "STARINDEX": "/fdb/STAR_indices/2.7.6a/UCSC/mm10/ref", 
+        "TEGTF": "/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/annotations/mm10_rmsk_TE.gtf"
+    }
+}
