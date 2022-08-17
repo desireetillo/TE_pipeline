@@ -36,7 +36,7 @@ rule trim:
         outfq1=join(workpath,trim_dir,"{name}.R1.trim.fastq.gz"),
         outfq2=join(workpath,trim_dir,"{name}.R2.trim.fastq.gz"),
     params:
-        rname="TETranscripts:trim",
+        rname="trim",
         cutadaptver=config['bin']['CUTADAPTVER'],
         adapters=config['references']['FASTAWITHADAPTERSETD']
     threads: 16
@@ -45,7 +45,7 @@ rule trim:
     cutadapt --pair-filter=any \
     --nextseq-trim=2 --trim-n -n 5 -O 5 \
     -q 10,10 -m 35:35 -j {threads} \
-    -b {params.adapters} -B {params.adapters} \
+    -b file:{params.adapters} -B file:{params.adapters} \
     -o {output.outfq1} -p {output.outfq2} \
     {input.file1} {input.file2}
     """
@@ -57,7 +57,7 @@ rule fastqc:
         expand(join(workpath,qc_dir,"{name}.R{rn}.trim_fastqc.html"), name=samples,rn=[1,2]),
     params:
         fastqcver=config['bin']['FASTQCVER'],
-        rname="TETranscripts:fastqc",
+        rname="fastqc",
     threads: 12
     shell:"""
     module load {params.fastqcver};
@@ -90,7 +90,7 @@ rule align:
         out3=join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam.flagstat"),
         out4=join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam.idxstats")
     params:
-        rname='TETranscripts:align',
+        rname='align',
         index=config['references']['STARINDEX'],
         starver=config['bin']['STARVER'],
         samtoolsver=config['bin']['SAMTOOLSVER'],
@@ -125,7 +125,7 @@ rule qualimap:
     params:
         qualimapver=config['bin']['QUALIMAPVER'],
         genesgtf=config['references']['GENESGTF'],
-        rname='TETranscripts:qualimap',
+        rname='qualimap',
     shell:"""
     unset DISPLAY
     module load {params.qualimapver};
@@ -150,7 +150,7 @@ rule inferstrand:
         genesbed=config['references']['GENESBED'],
         scriptsdir=config['bin']['SCRIPTSDIR'],
         pythonver=config['bin']['PYTHONVER'],
-        rname='TETranscripts:inferstrand'
+        rname='inferstrand'
     shell:"""
     module load {params.rnaseqcver}
     infer_experiment.py -i {input.bam} -s 400000 -r {params.genesbed} >{output.out1}
@@ -168,7 +168,7 @@ rule tecount:
         tetookitver=config['bin']['TETOOLKITVER'],
         genesgtf=config['references']['GENESGTF'],
         repeatsgtf=config['references']['TEGTF'],
-        rname='TETranscripts:tecount'
+        rname='tecount'
     shell:"""
     exptype=$(head -n 1 {input.exptype})
     module load {params.tetookitver}
