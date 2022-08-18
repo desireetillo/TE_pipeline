@@ -69,7 +69,7 @@ rule multiqc:
         expand(join(workpath,qc_dir,"{name}.R{rn}.trim_fastqc.html"), name=samples,rn=[1,2]),
         expand(join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam"), name=samples),
         expand(join(workpath,qc_dir,"{name}.infer_exp.txt"),name=samples),
-        expand(join(workpath,qc_dir,"qualimap.{name}","qualimap.html"),name=samples),
+        expand(join(workpath,qc_dir,"qualimap.{name}","qualimapReport.html"),name=samples),
     params:
         rname="multiqc",
         multiqc=config['bin']['MULTIQCVER'],
@@ -120,7 +120,7 @@ rule qualimap:
     input:
         bam=join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam"),
     output:
-        join(workpath,qc_dir,"qualimap.{name}","qualimap.html"),
+        join(workpath,qc_dir,"qualimap.{name}","qualimapReport.html"),
         outdir=join(workpath,qc_dir,"qualimap.{name}")
     params:
         qualimapver=config['bin']['QUALIMAPVER'],
@@ -160,7 +160,7 @@ rule inferstrand:
 
 rule tecount:
     input:
-        bam=join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam"),
+        bam=join(workpath,bam_dir,"{name}.STAR.Aligned.out.bam"),
         exptype=join(workpath,qc_dir,"{name}.exptype.txt")
     output:
         join(workpath,tecounts_dir,"{name}.cntTable"),
