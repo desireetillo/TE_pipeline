@@ -121,7 +121,6 @@ rule qualimap:
         bam=join(workpath,bam_dir,"{name}.Aligned.out.sorted.bam"),
     output:
         join(workpath,qc_dir,"qualimap.{name}","qualimapReport.html"),
-        outdir=join(workpath,qc_dir,"qualimap.{name}")
     params:
         qualimapver=config['bin']['QUALIMAPVER'],
         genesgtf=config['references']['GENESGTF'],
@@ -129,9 +128,9 @@ rule qualimap:
     shell:"""
     unset DISPLAY
     module load {params.qualimapver};
-    mkdir -p {output.outdir};
+    mkdir -p {workpath}/{qc_dir}/qualimap.{wildcards.name}
     qualimap rnaseq \
-    -outdir {output.outdir} \
+    -outdir {workpath}/{qc_dir}/qualimap.{wildcards.name} \
     -a proportional \
     -bam {input.bam} \
     -gtf {params.genesgtf} \
