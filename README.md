@@ -1,4 +1,4 @@
-# TE_pipeline
+# TE pipeline
 
 Snakemake pipeline for running TEcounts on NIH's Biowulf Cluster.
 
