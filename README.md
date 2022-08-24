@@ -18,12 +18,9 @@ Performs adapter trimming, qc, experiment inference, alignment (STAR) and quanti
   	STAR/2.7.6a
   	tetoolkit/2.1.4
    
-## Setup
+## Setting up a run on Biowulf
 
 Dependencies and paths to reference annotations and alignment indices are set in the file `Templates/template_TEtranscripts.json` and will need to be edited to suit your purposes.
-
-
-## Setting up a run on Biowulf
 
 Fastqs must be in directory FASTQ/
 
