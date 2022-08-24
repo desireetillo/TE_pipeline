@@ -1,7 +1,6 @@
 {
    "bin":{
       "CUTADAPTVER":"cutadapt/1.18",
-      "TRIMGALOREVER":"trimgalore/0.6.5",
       "STARVER":"STAR/2.7.6a",
       "SAMTOOLSVER":"samtools/1.13",
       "FASTQCVER":"fastqc/0.11.9",

@@ -9,8 +9,7 @@
         "SAMTOOLSVER": "samtools/1.13", 
         "SCRIPTSDIR": "/data/GAU/projects/Next0228/DUXBL_RNASeq/pipeline/Scripts", 
         "STARVER": "STAR/2.7.6a", 
-        "TETOOLKITVER": "tetoolkit/2.1.4", 
-        "TRIMGALOREVER": "trimgalore/0.6.5"
+        "TETOOLKITVER": "tetoolkit/2.1.4"
     }, 
     "project": {
         "annotation": "mm10", 
